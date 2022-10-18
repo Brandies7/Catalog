@@ -46,8 +46,17 @@ namespace Catalog.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = itemDto.Name,
-                Price = itemDto.Price,
-                CreatedDate = DateTimeOffset.UtcNow
+                Team = itemDto.Team,
+                PassCompletions = itemDto.PassCompletions,
+                PassAttempts = itemDto.PassAttempts,
+                PassingYards = itemDto.PassingYards,
+                PassingTouchDowns = itemDto.PassingTouchDowns,
+                Interceptions = itemDto.Interceptions,
+                RushingYards = itemDto.RushingYards,
+                RushingTouchDowns = itemDto.RushingTouchDowns,
+                //Photo = itemDto.Photo
+                Image = itemDto.Image
+
             };
 
             await repository.CreateItemAsync(item);
@@ -67,7 +76,15 @@ namespace Catalog.Controllers
             Item updateItem = existingItem with
             {
                 Name = itemDto.Name,
-                Price = itemDto.Price
+                Team = itemDto.Team,
+                PassCompletions = itemDto.PassCompletions,
+                PassAttempts = itemDto.PassAttempts,
+                PassingYards = itemDto.PassingYards,
+                PassingTouchDowns = itemDto.PassingTouchDowns,
+                Interceptions = itemDto.Interceptions,
+                RushingYards = itemDto.RushingYards,
+                RushingTouchDowns = itemDto.RushingTouchDowns,
+                Image = itemDto.Image
             };
 
             await repository.UpdateItemAsync(updateItem);

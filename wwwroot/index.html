@@ -2,17 +2,43 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Catalog</title>
     <link rel="stylesheet" href="css/site.css" />
   </head>
-  <body>
-    <h1>Catalog</h1>
+  <body class="nfl">
+    <h1>NFL Quarterback Stats</h1>
     <h3>Add</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-      <input type="text" id="add-name" placeholder="Name" />
-      <input type="text" id="add-price" placeholder="Price" />
-      <input type="submit" value="Add" />
-    </form>
+    <div class="stats">
+      <form
+        autocomplete="off"
+        action="javascript:void(0);"
+        method="POST"
+        onsubmit="addItem()"
+      >
+        <input type="text" id="add-image" placeholder="Image Url" />
+        <input type="text" id="add-name" placeholder="Name" />
+        <input type="text" id="add-team" placeholder="Team Name" />
+        <input type="text" id="add-passCompletions" placeholder="Completions" />
+        <input type="text" id="add-passAttempts" placeholder="Attempts" />
+        <input type="text" id="add-passingYards" placeholder="Passing Yards" />
+        <input
+          type="text"
+          id="add-passingTouchDowns"
+          placeholder="Passing TouchDowns"
+        />
+        <input type="text" id="add-interceptions" placeholder="Interceptions" />
+        <input type="text" id="add-rushingYards" placeholder="Rushing Yards" />
+        <input
+          type="text"
+          id="add-rushingTouchDowns"
+          placeholder="Rushing TouchDowns"
+        />
+
+        <!-- <input type="file" id="add-image" /> -->
+        <input type="submit" value="Add" />
+      </form>
+    </div>
 
     <!--
         div: {
@@ -33,8 +59,16 @@
       <h3>Edit</h3>
       <form action="javascript:void(0);" onsubmit="updateItem()">
         <input type="hidden" id="edit-id" />
+        <input type="text" id="edit-image" />
         <input type="text" id="edit-name" />
-        <input type="text" id="edit-price" />
+        <input type="text" id="edit-team" />
+        <input type="text" id="edit-passCompletions" />
+        <input type="text" id="edit-passAttempts" />
+        <input type="text" id="edit-passingYards" />
+        <input type="text" id="edit-passingTouchDowns" />
+        <input type="text" id="edit-interceptions" />
+        <input type="text" id="edit-rushingYards" />
+        <input type="text" id="edit-rushingTouchDowns" />
         <input type="submit" value="Save" />
         <a onclick="closeInput()" aria-label="Close">&#10006;</a>
       </form>
@@ -44,10 +78,18 @@
 
     <table>
       <tr>
+        <th>Player Photo</th>
         <th>Name</th>
-        <th>Price</th>
-        <th></th>
-        <th></th>
+        <th>Team Name</th>
+        <th>Passsing Attempts</th>
+        <th>Passing Completions</th>
+        <th>Passing Yards</th>
+        <th>Passing TouchDowns</th>
+        <th>Interceptions</th>
+        <th>Rushing Yards</th>
+        <th>Rushing TouchDowns</th>
+        <th style="border-right: none"></th>
+        <th style="border-left: none"></th>
       </tr>
       <tbody id="todos"></tbody>
     </table>

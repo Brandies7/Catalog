@@ -11,8 +11,15 @@ namespace Catalog
             {
                 Id = item.Id,
                 Name = item.Name,
-                Price = item.Price,
-                CreatedDate = item.CreatedDate
+                Team = item.Team,
+                PassCompletions = item.PassCompletions,
+                PassAttempts = item.PassAttempts,
+                PassingYards = item.PassingYards,
+                PassingTouchDowns = item.PassingTouchDowns,
+                Interceptions = item.Interceptions,
+                RushingYards = item.RushingYards,
+                RushingTouchDowns = item.RushingTouchDowns,
+                Image = item.Image
             };
         }
     }
